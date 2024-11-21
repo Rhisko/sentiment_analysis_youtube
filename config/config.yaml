@@ -1,0 +1,47 @@
+api_key: "AIzaSyDPyLPlsAE9CGoBnob5c_8vcy-hIWi-BQU"
+video_url: [
+            "https://www.youtube.com/live/Abg8maIN2zg",
+            "https://www.youtube.com/live/dd7LhT_jtVo",
+            "https://www.youtube.com/live/9YZdzRDod5M"
+]
+max_comments: 500
+
+
+keywords : {
+    "andika_hendi": [
+                    "andika", 
+                    "hendrar", 
+                    "hendi", 
+                    "perkasa",
+                    "tni",
+                    "1",
+                    "pdi",
+                    "satu",
+                    "banteng",
+                    "rambo",
+                    "andhika",
+                    "loreng",
+                    "hendy",
+                    "bintang 4",
+                    ],
+    "luthfi_taj": [
+                    "luthfi", 
+                    "taj", 
+                    "yasin", 
+                    "maimoen",
+                    "lutfi",
+                    "polisi",
+                    "2",
+                    "dua",
+                    "kim",
+                    "jokowi",
+                    "prabowo",
+                    "sambo",
+                    "gus",
+                    "coklat",
+                    "jkw",
+                    "mulyono",
+                    "fi",
+                    "bintang 3",
+                    ]
+}

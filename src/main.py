@@ -61,7 +61,7 @@ def main():
     
     # # # Sentiment Analysis
     # logger.info("Analyzing sentiment")
-    output_file="data/processed/dataset_with_sentiments.csv"
+    output_file="data/outputs/dataset_with_sentiments.csv"
     # process_sentiment_dataset("data/raw/comments_raw_cleaned.csv",output_file)
     create_grafik_sentiment_distribution(output_file)
     # print(sentiment_results)

@@ -91,5 +91,18 @@ def create_grafik_sentiment_distribution(file_path):
     plt.grid(axis="y", linestyle="--", alpha=0.7)
     plt.xticks(rotation=45)
     plt.show()
+    
+    for paslon in pivot_table.index:
+        sentiment_counts = pivot_table.loc[paslon]
+        sentiment_counts.plot(
+            kind="pie", 
+            autopct="%1.1f%%", 
+            colors=["red", "orange", "green"], 
+            startangle=90, 
+            figsize=(6, 6)
+        )
+        plt.title(f"Distribusi Sentimen Untuk Paslon | {paslon} |")
+        plt.ylabel("")
+        plt.show()
 
 

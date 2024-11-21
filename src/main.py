@@ -1,6 +1,6 @@
 from data_collection.youtube_data_collector import get_video_comments,get_youtube_video_id
 from preprocessing.clean_comments import preprocess_comments,assign_candidate
-from sentiment_analysis.analyze_sentiment import analyze_sentiment
+from sentiment_analysis.analyze_sentiment import analyze_sentiment , process_sentiment_dataset
 from sentiment_analysis.sentiment_report import generate_report
 from utils.logger import setup_logging
 from utils.helpers import load_yaml
@@ -60,11 +60,13 @@ def main():
     # print(clean_comments)
     
     # # Sentiment Analysis
-    # logger.info("Analyzing sentiment")
-    # sentiment_results = analyze_sentiment(clean_comments)
+    logger.info("Analyzing sentiment")
+    output_file="data/processed/dataset_with_sentiments.csv"
+    process_sentiment_dataset("data/raw/comments_raw_cleaned.csv",output_file)
+    create_grafik_sentiment_distribution(output_file)
     # print(sentiment_results)
     
-    # # Generate Report
+    # Generate Report
     # logger.info("Generating sentiment report")
     # generate_report(sentiment_results)
     
@@ -72,7 +74,7 @@ def main():
     # logger.info("Show Sentiment score & sentiment distribution")
     # file_path = "data/processed/sentiment_report.json"
     # create_grafik_score(file_path)
-    # create_grafik_sentiment_distribution(file_path)
+    
 
 if __name__ == "__main__":
     main()

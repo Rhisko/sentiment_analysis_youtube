@@ -1,6 +1,6 @@
 import re
 import pandas as pd
-
+import unicodedata
 
 def clean_comment(comment):
     # Remove URLs
@@ -9,12 +9,15 @@ def clean_comment(comment):
     comment = re.sub(r'<.*?>', '', comment)
     # Remove punctuation (including double quotes)
     comment = re.sub(r'[^\w\s]', '', comment)
-    # Remove numbers
-    # comment = re.sub(r'\d+', '', comment)
     # Convert to lowercase
     comment = comment.lower()
     # Explicitly remove all types of quotes (straight or curly)
     comment = comment.replace('"', '').replace("'", '').replace("“", '').replace("”", '')
+    comment = re.sub(r'(.)\1{2,}', r'\1', comment)
+    # Remove accents
+    comment = ''.join(
+            char for char in unicodedata.normalize('NFKD', comment) if not unicodedata.combining(char)
+        )
     # Strip leading and trailing spaces
     return comment.strip()
 

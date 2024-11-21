@@ -1,6 +1,7 @@
 import json
 import matplotlib.pyplot as plt
 from collections import Counter
+import pandas as pd
 
 def load_data(file_path):
     """
@@ -64,12 +65,31 @@ def plot_pie_chart(sentiment_counts):
 
 def create_grafik_sentiment_distribution(file_path):
     
-    data = load_data(file_path)
-    
-    # Get sentiment counts
-    sentiment_counts = get_sentiment_counts(data)
-    
-    # Plot both Bar Chart and Pie Chart
-    plot_bar_chart(sentiment_counts)
-    plot_pie_chart(sentiment_counts)
+    # file_path = "data/processed/dataset_with_sentiments.csv"  # Ganti dengan path file CSV Anda
+    df = pd.read_csv(file_path)
+
+    pivot_table = df.pivot_table(
+        index="paslon", 
+        columns="sentiment", 
+        aggfunc="size", 
+        fill_value=0
+    )
+
+
+    pivot_table.plot(
+        kind="bar", 
+        figsize=(10, 6), 
+        stacked=False, 
+        color={"positif": "green", "netral": "orange", "negatif": "red"}
+    )
+
+
+    plt.title("Distribusi Sentimen Berdasarkan Paslon")
+    plt.xlabel("Paslon")
+    plt.ylabel("Jumlah Komentar")
+    plt.legend(title="Sentimen")
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
+    plt.xticks(rotation=45)
+    plt.show()
+
 

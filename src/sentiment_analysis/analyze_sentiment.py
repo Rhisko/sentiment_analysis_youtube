@@ -1,68 +1,40 @@
 from transformers import pipeline
+import pandas as pd
 
-# sentiment_pipeline = pipeline(
-#     "sentiment-analysis",
-#     model="indobenchmark/indobert-base-p2",
-#     tokenizer="indobenchmark/indobert-base-p2"
-# )
-# sentiment_pipeline = pipeline(
-#     "sentiment-analysis",
-#     model="xlm-roberta-base",
-#     tokenizer="xlm-roberta-base"
-# )
-sentiment_pipeline = pipeline(
-    "sentiment-analysis",
-    model="bert-base-multilingual-cased",
-    tokenizer="bert-base-multilingual-cased"
-)
+def initialize_sentiment_pipeline():
+    return pipeline(
+        "sentiment-analysis",
+        model="nlptown/bert-base-multilingual-uncased-sentiment",
+        tokenizer="nlptown/bert-base-multilingual-uncased-sentiment"
+    )
 
-label_mapping = {
-    "LABEL_0": "negative",
-    "LABEL_1": "neutral",
-    "LABEL_2": "positive"
-}
+def map_sentiment_to_category(label):
+    if label in ["4 stars", "5 stars"]:
+        return "positif"
+    elif label in ["3 stars"]:
+        return "netral"
+    elif label in ["1 star", "2 stars"]:
+        return "negatif"
+    else:
+        return "unknown"  
 
-def analyze_sentiment(comments):
-    results = []
-    for comment in comments:
-        if comment.strip():  
-            try:
-                analysis = sentiment_pipeline(comment)
-                label = analysis[0]['label']
-                sentiment = label_mapping.get(label, "unknown")  # Map label ke sentimen
-                results.append({
-                    "comment": comment,
-                    "sentiment": sentiment,
-                    "score": round(analysis[0]['score'], 2)
-                })
-            except Exception as e:
-                print(f"Error processing comment: {comment}. Error: {e}")
-        else:
-            print(f"empty Comment")
-            # results.append({
-            #     "comment": comment,
-            #     "sentiment": "neutral",
-            #     "score": 0
-            # })
-    return results
 
-# def analyze_sentiment(comments):
-#     results = []
-#     for comment in comments:
-#         if comment.strip():  # Skip empty comments
-#             analysis = sentiment_pipeline(comment)
-#             label = analysis[0]['label']
-#             sentiment = label_mapping.get(label, "unknown")  # Map label to sentiment
-#             results.append({
-#                 "comment": comment,
-#                 "sentiment": sentiment,  # Mapped sentiment label
-#                 "score": round(analysis[0]['score'], 2)  # Rounded confidence score
-#             })
-#         else:
-#             # Handle empty comments as neutral
-#             results.append({
-#                 "comment": comment,
-#                 "sentiment": "neutral",
-#                 "score": 0
-#             })
-#     return results
+def analyze_sentiment(text, sentiment_pipeline):
+    try:
+        result = sentiment_pipeline(text[:512])  # limit 512
+        label = result[0]['label']  
+        return map_sentiment_to_category(label) 
+    except Exception as e:
+        return "error"  
+
+
+def process_sentiment_dataset(file_path, output_path, comment_column="comment"):
+
+    dataset = pd.read_csv(file_path)
+    sentiment_pipeline = initialize_sentiment_pipeline()
+    dataset["sentiment"] = dataset[comment_column].apply(lambda x: analyze_sentiment(x, sentiment_pipeline))
+    dataset.to_csv(output_path, index=False)
+    print(f"Dataset dengan sentimen berhasil disimpan ke {output_path}")
+    
+    return dataset
+

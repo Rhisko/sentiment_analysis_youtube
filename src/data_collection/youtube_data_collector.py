@@ -18,7 +18,7 @@ def load_config():
     with open("config/config.yaml", "r") as file:
         return yaml.safe_load(file)
 
-def get_video_comments(api_key, video_id, max_results=500):
+def get_video_comments(api_key, video_id, max_results):
     youtube = build("youtube", "v3", developerKey=api_key)
     comments = []
     next_page_token = None
@@ -47,33 +47,6 @@ def get_video_comments(api_key, video_id, max_results=500):
         if not next_page_token:
             break
 
-    # Optionally save comments to a JSON file
-    # with open('data/raw/comments_raw.json', 'w') as outfile:
-    #     json.dump(comments, outfile, indent=4)
-    #     print("Comments extracted successfully.")
-
     return comments
 
 
-# import json
-
-# # Load JSON data from the file
-# with open('/mnt/data/sample_data.json', 'r') as file:
-#     data = json.load(file)
-
-# # Extracting comments
-# comments = []
-# for item in data.get('items', []):
-#     comment = item['snippet']['topLevelComment']['snippet']
-#     comments.append({
-#         'text': comment['textOriginal'],
-#         'author': comment['authorDisplayName'],
-#         'like_count': comment['likeCount'],
-#         'published_at': comment['publishedAt']
-#     })
-
-# # Save the extracted data to a new JSON or CSV file
-# with open('/mnt/data/extracted_comments.json', 'w') as outfile:
-#     json.dump(comments, outfile, indent=4)
-
-# print("Comments extracted successfully.")

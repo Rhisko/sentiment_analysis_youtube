@@ -20,50 +20,46 @@ def save_to_csv(file_path, data):
         writer.writerows(data) 
 
 def main():
-    # logger = setup_logging()
+    logger = setup_logging()
     
-    # # Load configuration
-    # config = load_yaml("config/config.yaml")
+    # Load configuration
+    config = load_yaml("config/config.yaml")
     
-    # # Data Collection
-    # logger.info("Collecting data from YouTube")
-    # comments=[]
+    # Data Collection
+    logger.info("Collecting data from YouTube")
+    comments=[]
     
-    # for video in config["video_url"]:
-    #     video_id= get_youtube_video_id(video)
-    #     # print(video_id)
-    #     comment = get_video_comments(config["api_key"], video_id, config["max_comments"])
-    #     comments.extend(comment)
+    for video in config["video_url"]:
+        video_id= get_youtube_video_id(video)
+        # print(video_id)
+        comment = get_video_comments(config["api_key"], video_id, config["max_comments"])
+        comments.extend(comment)
 
-    # # Save the CSV string to a file
-    # # save_to_csv("data/raw/comments_raw.csv",comments)
+    # Save the CSV string to a file
+    # save_to_csv("data/raw/comments_raw.csv",comments)
 
 
-    # # # Data Preprocessing
-    # logger.info("Preprocessing comments")
-    # clean_comments = preprocess_comments(comments)
-    # results_with_candidate = []
-    # for comment in clean_comments:
-    #     candidates = assign_candidate(comment, config["keywords"])
-    #     results_with_candidate.append({"comment": comment, "paslon": candidates})
-    # # print(results_with_candidate[:5])
+    # # Data Preprocessing
+    logger.info("Preprocessing comments")
+    clean_comments = preprocess_comments(comments)
+    results_with_candidate = []
+    for comment in clean_comments:
+        candidates = assign_candidate(comment, config["keywords"])
+        results_with_candidate.append({"comment": comment, "paslon": candidates})
+    # print(results_with_candidate[:5])
 
-        
-    # save_to_csv("data/raw/comments_raw_cleaned.csv",results_with_candidate)
-    # # clean_comments_with_candidate = assign_candidate(clean_comments,config["keywords"])
-
+    cleaned_file = "data/raw/comments_raw_cleaned.csv" 
+    save_to_csv(cleaned_file,results_with_candidate)
     
-    
-    # # df=pd.read_csv("data/raw/comments_raw_cleaned.csv")
-    # # empty_columns = df.columns[df.isnull().all()].tolist()
-    # # print(empty_columns)
-    # # print(clean_comments)
-    
-    # # # Sentiment Analysis
-    # logger.info("Analyzing sentiment")
+    # # Sentiment Analysis
+    logger.info("Analyzing sentiment")
     output_file="data/outputs/dataset_with_sentiments.csv"
-    # process_sentiment_dataset("data/raw/comments_raw_cleaned.csv",output_file)
+    process_sentiment_dataset(cleaned_file,output_file)
     create_grafik_sentiment_distribution(output_file)
+    
+    
+    
+    
     # print(sentiment_results)
     
     # Generate Report

@@ -34,7 +34,7 @@ def process_sentiment_dataset(file_path, output_path, comment_column="comment"):
     sentiment_pipeline = initialize_sentiment_pipeline()
     dataset["sentiment"] = dataset[comment_column].apply(lambda x: analyze_sentiment(x, sentiment_pipeline))
     dataset.to_csv(output_path, index=False)
-    print(f"Dataset dengan sentimen berhasil disimpan ke {output_path}")
+    print(f"Dataset has been created succesfully {output_path}")
     
     return dataset
 

@@ -64,8 +64,6 @@ def plot_pie_chart(sentiment_counts):
     plt.show()
 
 def create_grafik_sentiment_distribution(file_path):
-    
-    # file_path = "data/processed/dataset_with_sentiments.csv"  # Ganti dengan path file CSV Anda
     df = pd.read_csv(file_path)
 
     pivot_table = df.pivot_table(
@@ -74,26 +72,36 @@ def create_grafik_sentiment_distribution(file_path):
         aggfunc="size", 
         fill_value=0
     )
+    
+    # Calculate total comments per paslon
+    pivot_table["total_comments"] = pivot_table.sum(axis=1)
 
-
-    pivot_table.plot(
+    # Bar chart for sentiment distribution
+    ax = pivot_table.drop(columns="total_comments").plot(
         kind="bar", 
         figsize=(10, 6), 
         stacked=False, 
         color={"positif": "green", "netral": "orange", "negatif": "red"}
     )
-
-
     plt.title("Distribusi Sentimen Berdasarkan Paslon")
     plt.xlabel("Paslon")
     plt.ylabel("Jumlah Komentar")
     plt.legend(title="Sentimen")
     plt.grid(axis="y", linestyle="--", alpha=0.7)
     plt.xticks(rotation=45)
+
+    # Add total comments as annotations
+    for idx, total in enumerate(pivot_table["total_comments"]):
+        ax.text(idx, pivot_table.drop(columns="total_comments").iloc[idx].max() + 2, 
+                f"Total: {total}", 
+                ha="center", fontsize=10, color="black")
     plt.show()
-    
+
+    # Pie charts for each paslon
     for paslon in pivot_table.index:
-        sentiment_counts = pivot_table.loc[paslon]
+        sentiment_counts = pivot_table.drop(columns="total_comments").loc[paslon]
+        total_comments = pivot_table.loc[paslon, "total_comments"]
+        
         sentiment_counts.plot(
             kind="pie", 
             autopct="%1.1f%%", 
@@ -101,8 +109,7 @@ def create_grafik_sentiment_distribution(file_path):
             startangle=90, 
             figsize=(6, 6)
         )
-        plt.title(f"Distribusi Sentimen Untuk Paslon | {paslon} |")
-        plt.ylabel("")
+        plt.title(f"Distribusi Sentimen untuk Paslon {paslon}\nTotal Komentar: {total_comments}")
+        plt.ylabel("")  # Remove y-axis label for better visualization
         plt.show()
-
 

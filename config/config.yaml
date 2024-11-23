@@ -4,9 +4,8 @@ video_url: [
             "https://www.youtube.com/live/dd7LhT_jtVo",
             "https://www.youtube.com/watch?v=_Q9XInVZxJU"
 ]
+
 max_comments: 500
-
-
 keywords : {
     "andika_hendi": [
                     "andika", 
@@ -15,14 +14,16 @@ keywords : {
                     "perkasa",
                     "tni",
                     "1",
-                    "pdi",
                     "satu",
+                    "pdi",
                     "banteng",
                     "rambo",
                     "andhika",
+                    "pacul",
                     "loreng",
-                    "hendy",
                     "bintang 4",
+                    "hendy",
+                    "mega"
                     ],
     "luthfi_taj": [
                     "luthfi", 
@@ -30,18 +31,36 @@ keywords : {
                     "yasin", 
                     "maimoen",
                     "lutfi",
-                    "polisi",
                     "2",
                     "dua",
-                    "kim",
+                    "polisi",
                     "jokowi",
                     "prabowo",
-                    "sambo",
-                    "gus",
-                    "coklat",
-                    "jkw",
+                    "kim",
                     "mulyono",
-                    "fi",
                     "bintang 3",
-                    ]
+                    "jkw",
+                    "coklat",
+                    "gus",
+                    "solo",                                       
+                ]
+}
+
+SENTIMENT_DICTIONARY : {
+    "positif": [
+        "amazing", "awesome", "great", "love", "fantastic", "excellent",
+        "visioner", "berpengalaman", "tegas", "merakyat", 
+        "integritas", "profesional", "kompeten", "berintegritas", 
+        "dekat dengan rakyat", "berjiwa pemimpin","bisa di percaya","andika ye","jateng perkasa","tertarik","mantap"
+    ],
+    "negatif": [
+        "terrible", "hate", "bad", "awful", "poor", "worst",
+        "tidak kompeten", "korup", "arogan", "tidak berpengalaman",
+        "pembohong", "tidak tegas", "tidak peduli", "egois",
+        "lemah", "buruk", "curang"
+    ],
+    "netral": [
+        "standar", "cukup", "biasa saja", "netral", 
+        "umum", "lumayan", "tidak buruk", "tidak luar biasa"
+    ]
 }

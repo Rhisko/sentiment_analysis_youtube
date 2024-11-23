@@ -3,11 +3,6 @@ import pandas as pd
 import unicodedata
 
 def clean_comment(comment):
-    """
-    Clean and normalize a single comment by removing unwanted elements, non-Latin characters, and more.
-    :param comment: The input string (comment) to be cleaned.
-    :return: The cleaned and normalized comment string.
-    """
     # Remove URLs
     comment = re.sub(r'http\S+|www\.\S+', '', comment)
     # Remove HTML tags

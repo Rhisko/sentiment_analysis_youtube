@@ -7,10 +7,8 @@ from visualization.plot_sentiment_distribution import create_grafik_sentiment_di
 from data_collection.create_report_csv import save_to_csv
 
 
+
 def collect_data(config, logger):
-    """
-    Collect comments from YouTube videos based on the configuration.
-    """
     logger.info("Collecting data from YouTube")
     all_comments = []
     for video_url in config["video_url"]:
@@ -24,9 +22,6 @@ def collect_data(config, logger):
 
 
 def preprocess_data(comments, config, logger):
-    """
-    Preprocess comments and assign candidates based on keywords.
-    """
     logger.info("Preprocessing comments")
     clean_comments = preprocess_comments(comments)
     results_with_candidate = [
@@ -37,9 +32,6 @@ def preprocess_data(comments, config, logger):
 
 
 def perform_sentiment_analysis(cleaned_file, output_file, logger):
-    """
-    Perform sentiment analysis and create sentiment distribution plot.
-    """
     logger.info("Analyzing sentiment")
     process_sentiment_dataset(cleaned_file, output_file)
     create_grafik_sentiment_distribution(output_file)
@@ -68,10 +60,10 @@ def main():
         save_to_csv(cleaned_file, results_with_candidate, fieldnames=["comment", "paslon"])
         logger.info(f"Saved preprocessed comments to {cleaned_file}")
         
-        # Step 3: Sentiment Analysis
-        # output_file = "data/outputs/dataset_with_sentiments.csv"
-        # perform_sentiment_analysis(cleaned_file, output_file, logger)
-        # logger.info(f"Sentiment analysis completed. Output saved to {output_file}")
+        #Step 3: Sentiment Analysis
+        output_file = "data/outputs/dataset_with_sentiments.csv"
+        perform_sentiment_analysis(cleaned_file, output_file, logger)
+        logger.info(f"Sentiment analysis completed. Output saved to {output_file}")
     
     except Exception as e:
         logger.error(f"An error occurred: {e}")

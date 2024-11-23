@@ -3,8 +3,13 @@ import pandas as pd
 import unicodedata
 
 def clean_comment(comment):
+    """
+    Clean and normalize a single comment by removing unwanted elements, non-Latin characters, and more.
+    :param comment: The input string (comment) to be cleaned.
+    :return: The cleaned and normalized comment string.
+    """
     # Remove URLs
-    comment = re.sub(r'http\S+|www.\S+', '', comment)
+    comment = re.sub(r'http\S+|www\.\S+', '', comment)
     # Remove HTML tags
     comment = re.sub(r'<.*?>', '', comment)
     # Remove punctuation (including double quotes)
@@ -13,16 +18,20 @@ def clean_comment(comment):
     comment = comment.lower()
     # Explicitly remove all types of quotes (straight or curly)
     comment = comment.replace('"', '').replace("'", '').replace("“", '').replace("”", '')
-    comment = re.sub(r'(.)\1{2,}', r'\1', comment)
+    # Remove non-Latin characters
+    comment = re.sub(r'[^\u0020-\u00FF]', '', comment)
     # Remove accents
     comment = ''.join(
-            char for char in unicodedata.normalize('NFKD', comment) if not unicodedata.combining(char)
-        )
+        char for char in unicodedata.normalize('NFKD', comment) 
+        if not unicodedata.combining(char)
+    )
     # Strip leading and trailing spaces
-    return comment.strip()
+    return comment.strip() if comment.strip() else None
 
 def preprocess_comments(comments):
     return [clean_comment(comment) for comment in comments if clean_comment(comment)]
+
+
 
 
 def assign_candidate(comment, keywords):

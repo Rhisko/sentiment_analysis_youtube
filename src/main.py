@@ -69,9 +69,9 @@ def main():
         logger.info(f"Saved preprocessed comments to {cleaned_file}")
         
         # Step 3: Sentiment Analysis
-        output_file = "data/outputs/dataset_with_sentiments.csv"
-        perform_sentiment_analysis(cleaned_file, output_file, logger)
-        logger.info(f"Sentiment analysis completed. Output saved to {output_file}")
+        # output_file = "data/outputs/dataset_with_sentiments.csv"
+        # perform_sentiment_analysis(cleaned_file, output_file, logger)
+        # logger.info(f"Sentiment analysis completed. Output saved to {output_file}")
     
     except Exception as e:
         logger.error(f"An error occurred: {e}")

@@ -1,4 +1,6 @@
 config/config.yaml
+mytoken.rk
+
 .env
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -2,6 +2,7 @@ import json
 import matplotlib.pyplot as plt
 from collections import Counter
 import pandas as pd
+from wordcloud import WordCloud
 
 # def load_data(file_path):
 #     """
@@ -112,4 +113,15 @@ def create_grafik_sentiment_distribution(file_path):
         plt.title(f"Distribusi Sentimen untuk Paslon {paslon}\nTotal Komentar: {total_comments}")
         plt.ylabel("")  # Remove y-axis label for better visualization
         plt.show()
+        
+    text_data = " ".join(comment for comment in df['comment'].astype(str))
 
+    # Generate a word cloud
+    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text_data)
+
+    # Display the word cloud
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.title("Word Cloud of Comments", fontsize=16)
+    plt.show()

@@ -1,5 +1,5 @@
 from data_collection.youtube_data_collector import get_video_comments, get_youtube_video_id
-from preprocessing.clean_comments import preprocess_comments, assign_candidate
+from preprocessing.clean_comments import preprocess_comments, assign_comment
 from sentiment_analysis.analyze_sentiment import process_sentiment_dataset
 from utils.logger import setup_logging
 from utils.helpers import load_yaml
@@ -24,11 +24,11 @@ def collect_data(config, logger):
 def preprocess_data(comments, config, logger):
     logger.info("Preprocessing comments")
     clean_comments = preprocess_comments(comments)
-    results_with_candidate = [
-        {"comment": comment, "paslon": assign_candidate(comment, config["keywords"])}
+    comment_related = [
+        {"comment": comment, "kebijakan": assign_comment(comment, config["keywords"])}
         for comment in clean_comments
     ]
-    return results_with_candidate
+    return comment_related
 
 
 def perform_sentiment_analysis(cleaned_file, output_file, logger):
@@ -55,9 +55,9 @@ def main():
         logger.info(f"Saved raw comments to {raw_comments_file}")
         
         # Step 2: Data Preprocessing
-        results_with_candidate = preprocess_data(comments, config, logger)
+        comment_related = preprocess_data(comments, config, logger)
         cleaned_file = "data/processed/comments_raw_cleaned.csv"
-        save_to_csv(cleaned_file, results_with_candidate, fieldnames=["comment", "paslon"])
+        save_to_csv(cleaned_file, comment_related, fieldnames=["comment", "kebijakan"])
         logger.info(f"Saved preprocessed comments to {cleaned_file}")
         
         #Step 3: Sentiment Analysis

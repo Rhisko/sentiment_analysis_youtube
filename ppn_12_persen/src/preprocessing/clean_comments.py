@@ -29,11 +29,11 @@ def preprocess_comments(comments):
 
 
 
-def assign_candidate(comment, keywords):
-    detected_candidates = []
+def assign_comment(comment, keywords):
+    detected_coment = []
     for candidate, terms in keywords.items():
         # print(f"{candidate} - {terms}")
         if any(term in comment.lower() for term in terms):
-            detected_candidates.append(candidate)
-    return ", ".join(detected_candidates) if detected_candidates else "unknown"
+            detected_coment.append(candidate)
+    return ", ".join(detected_coment) if detected_coment else "unknown"
 

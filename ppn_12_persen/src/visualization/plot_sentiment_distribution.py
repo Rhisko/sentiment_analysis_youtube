@@ -68,13 +68,13 @@ def create_grafik_sentiment_distribution(file_path):
     df = pd.read_csv(file_path)
 
     pivot_table = df.pivot_table(
-        index="paslon", 
+        index="kebijakan", 
         columns="sentiment", 
         aggfunc="size", 
         fill_value=0
     )
     
-    # Calculate total comments per paslon
+    # Calculate total comments per kebijakan
     pivot_table["total_comments"] = pivot_table.sum(axis=1)
 
     # Bar chart for sentiment distribution
@@ -84,8 +84,8 @@ def create_grafik_sentiment_distribution(file_path):
         stacked=False, 
         color={"positif": "green", "netral": "orange", "negatif": "red"}
     )
-    plt.title("Distribusi Sentimen Berdasarkan Paslon")
-    plt.xlabel("Paslon")
+    plt.title("Distribusi Sentimen Berdasarkan kebijakan")
+    plt.xlabel("kebijakan")
     plt.ylabel("Jumlah Komentar")
     plt.legend(title="Sentimen")
     plt.grid(axis="y", linestyle="--", alpha=0.7)
@@ -98,10 +98,10 @@ def create_grafik_sentiment_distribution(file_path):
                 ha="center", fontsize=10, color="black")
     plt.show()
 
-    # Pie charts for each paslon
-    for paslon in pivot_table.index:
-        sentiment_counts = pivot_table.drop(columns="total_comments").loc[paslon]
-        total_comments = pivot_table.loc[paslon, "total_comments"]
+    # Pie charts for each kebijakan
+    for kebijakan in pivot_table.index:
+        sentiment_counts = pivot_table.drop(columns="total_comments").loc[kebijakan]
+        total_comments = pivot_table.loc[kebijakan, "total_comments"]
         
         sentiment_counts.plot(
             kind="pie", 
@@ -110,7 +110,7 @@ def create_grafik_sentiment_distribution(file_path):
             startangle=90, 
             figsize=(6, 6)
         )
-        plt.title(f"Distribusi Sentimen untuk Paslon {paslon}\nTotal Komentar: {total_comments}")
+        plt.title(f"Distribusi Sentimen untuk kebijakan {kebijakan}\nTotal Komentar: {total_comments}")
         plt.ylabel("")  # Remove y-axis label for better visualization
         plt.show()
         

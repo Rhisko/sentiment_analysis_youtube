@@ -1,0 +1,79 @@
+api_key: "AIzaSyDSDZPhkF2a0dlwbeyFw30DmJca-pEit2o"
+video_url: [
+            "https://www.youtube.com/watch?v=xX5JxfSCXBo",
+            "https://www.youtube.com/watch?v=MEOd6iD2cGg&t=13s",
+            "https://www.youtube.com/watch?v=eI-9OEdL9l4",
+            "https://www.youtube.com/watch?v=3uOCqjdQPzQ",
+            "https://www.youtube.com/watch?v=QnHOkm9skfo",
+            "https://www.youtube.com/watch?v=gXNBOTFv-8o",
+            "https://www.youtube.com/watch?v=VOqD8QwwB9Y",
+            "https://www.youtube.com/watch?v=T3XYORqF8Cs",
+            "https://www.youtube.com/watch?v=eAI4WYL2jp8",
+            "https://www.youtube.com/watch?v=l1XYwA859mM"
+]
+
+max_comments: 500
+keywords : {
+    "ppn_12_persen": [
+                    "kenaikan", 
+                    "prabowo",
+                    "gibran", 
+                    "jokowi", 
+                    "ppn", 
+                    "12",
+                    "sri mulyani",
+                    "sri",
+                    "mulyani",
+                    "mulyono",
+                    "janji",
+                    "presiden",
+                    "rakyat",
+                    "pajak",
+                    "naikin",
+                    "tax",
+                    "tunjangan",
+                    "kim",
+                    "pemimpin",
+                    "sri mulyono",
+                    "konoha",
+                    "turun",
+                    "naik",
+                    "pemerintah",
+                    "defisit",
+                    "korupsi",
+                    "koruptor",
+                    "02",
+                    "ok gas",
+                    "menkeu",
+                    "mentri",
+                    "gaji",
+                    "tolak",
+                    "perampok",
+                    "penghasilan",
+                    "kebijakan",
+                    "boikot",
+                    "menengah",
+                    "rugi",
+                    "peras",
+                    "mahal",
+        ]
+}
+
+SENTIMENT_DICTIONARY : {
+    "positif": [
+        "amazing", "awesome", "great", "love", "fantastic", "excellent",
+        "visioner", "berpengalaman", "tegas", "merakyat", 
+        "integritas", "profesional", "kompeten", "berintegritas", 
+        "kemakmuran","untuk rakyat"
+    ],
+    "negatif": [
+        "terrible", "hate", "bad", "awful", "poor", "worst",
+        "tidak kompeten", "korup", "arogan", "tidak berpengalaman",
+        "pembohong", "tidak tegas", "tidak peduli", "egois",
+        "lemah", "buruk", "curang","anggaran boncos","ngak punya kemampuan kerja","auto kecewa","goblok","taek"
+    ],
+    "netral": [
+        "standar", "cukup", "biasa saja", "netral", 
+        "umum", "lumayan", "tidak buruk", "tidak luar biasa"
+    ]
+}

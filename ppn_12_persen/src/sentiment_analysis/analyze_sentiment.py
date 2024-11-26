@@ -45,6 +45,7 @@ def analyze_sentiment(text, sentiment_pipeline):
 
 def process_sentiment_dataset(file_path, output_path, comment_column="comment"):
     dataset = pd.read_csv(file_path)
+    dataset = dataset[dataset['kebijakan'] != "unknown"]
     sentiment_pipeline = initialize_sentiment_pipeline()
 
     # Apply sentiment analysis to each comment

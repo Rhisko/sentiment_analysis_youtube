@@ -77,3 +77,20 @@ SENTIMENT_DICTIONARY : {
         "umum", "lumayan", "tidak buruk", "tidak luar biasa"
     ]
 }
+
+slang_to_formal : {
+    "yg": "yang",
+    "tdk": "tidak",
+    "dgn": "dengan",
+    "gk": "tidak",
+    "ga": "tidak",
+    "aja": "saja",
+    "bgt": "banget",
+    "nih": "ini",
+    "klo": "kalau",
+    "kpn": "kapan",
+    "siapa": "siapa",
+    "bbrp": "beberapa",
+    "bsk": "besok",
+    "skrg": "sekarang"
+}

@@ -1,0 +1,195 @@
+api_key: "AIzaSyDSDZPhkF2a0dlwbeyFw30DmJca-pEit2o"
+video_url: [
+            #BBC News
+            "https://www.youtube.com/watch?v=QxIMl68s0ps",
+            "https://www.youtube.com/watch?v=fp14T-7mgos",
+
+            #FRANCE 24 English
+            "https://www.youtube.com/watch?v=wBgCsgBLWpg",
+            "https://www.youtube.com/watch?v=cgcEu4epzdk",
+            
+            #Al Jazeera English
+            "https://www.youtube.com/watch?v=Bd4UpC881QQ",
+            "https://www.youtube.com/watch?v=7nOSVtGMfew",
+
+            #VICE News
+            "https://www.youtube.com/watch?v=co5Vb2Og0po",
+            "https://www.youtube.com/watch?v=U741F22Cw80",
+
+            #The Young Turks
+            "https://www.youtube.com/watch?v=oBIOXk6sQso",
+            "https://www.youtube.com/watch?v=c4Ld8k4uMl0",
+
+            # SKy news
+            "https://www.youtube.com/watch?v=wzwG_b9KFo8",
+            "https://www.youtube.com/watch?v=duZt2Fezw4E",
+
+            # The Sun
+            "https://www.youtube.com/watch?v=Mg5WVtEPy-k",
+            "https://www.youtube.com/watch?v=m7XdYNy43SM",
+]
+
+max_comments: 500
+keywords : {
+    russia : [
+                    "russia", "russian", "moscow", "putin", "kremlin", "red square",
+                    "st. petersburg", "vladimir putin", "russian federation", 
+                    "siberia", "russian soldiers", "russian tanks", "russian invasion",
+                    "russian sanctions", "kremlin propaganda", "kremlin lies",
+                    "putin regime", "chechnya", "moskva ship", "kgb", "fsb", "russian spy",
+                    "russian economy", "russian ruble", "sanction russia", "leningrad",
+                    "nuclear threat", "russian missile", "russian air force", 
+                    "russian navy", "russian army", "russian dictator", "russian imperialism",
+                    "russian hackers", "cyber attack", "putin supporters", "russian oligarchs",
+                    "russian disinformation", "russian war crimes", "donetsk", "lugansk",
+                    "luhansk", "sevastopol", "kaliningrad", "stalin", "lenin", 
+                    "communist russia", "sputnik", "novichok", "russian military",
+                    "russian aggression", "ukraine invasion", "war with russia", 
+                    "russian withdrawal", "putin policies", "russian mobilization"
+                    ],
+    ukraine : [
+                    "ukraine", "ukrainian", "kyiv", "kiev", "zelensky", "lviv",
+                    "ukrainian forces", "ukrainian army", "ukrainian resistance", 
+                    "ukrainian president", "ukraine war", "ukrainian refugees",
+                    "donbas", "crimea", "zelensky speech", "ukraine nato", "ukraine victory",
+                    "ukraine crisis", "ukrainian flag", "ukraine solidarity", 
+                    "ukraine freedom", "ukrainian independence", "ukraine support",
+                    "ukraine government", "ukraine russia war", "ukrainian sanctions",
+                    "ukraine sovereignty", "ukraine hero", "chernobyl", "dnipro",
+                    "mariupol", "kharkiv", "ukraine volunteers", "ukraine aid",
+                    "ukraine europe", "ukraine liberation", "ukraine frontline",
+                    "ukrainian defenders", "ukraine missile defense", "ukraine future",
+                    "ukraine reconstruction", "ukraine artillery", "ukraine refugees",
+                    "ukraine war crimes", "zelensky appeal", "ukrainian bravery"
+                    ]
+
+
+
+}
+
+SENTIMENT_DICTIONARY : {
+    "positif": [
+        "brave", "resilient", "heroic", "visionary", "experienced",
+        "strong", "leadership", "unity", "freedom", "prosperity", 
+        "competent", "integrity", "peace", "dedication", "justice",
+        "patriot", "sacrifice", "courage", "support", "solidarity",
+        "victory", "hope", "liberation", "defender", "reconstruction",
+        "stability", "independence", "amazing", "fantastic", 
+        "outstanding", "commendable", "admirable", "peaceful resolution"
+    ],
+    "negatif": [
+        "invasion", "aggression", "occupation", "hate", "war", 
+        "atrocity", "genocide", "destruction", "corrupt", "arrogant", 
+        "weak", "poor", "coward", "dictator", "propaganda", "lies",
+        "disinformation", "threat", "nuclear threat", "terrible", 
+        "awful", "traitor", "chaos", "sanction", "poverty", 
+        "economic collapse", "violence", "tyrant", "killing",
+        "violation", "humanitarian crisis", "repression", 
+        "war crimes", "devastation", "hate speech", "division", 
+        "escalation", "fear", "bloodshed", "annexation", "imperialism"
+    ],
+    "netral": [
+        "neutral", "standard", "average", "general", "ordinary", 
+        "normal", "common", "moderate", "adequate", "not bad", 
+        "acceptable", "sufficient", "usual", "not extraordinary", 
+        "limited", "traditional", "functional", "middle ground",
+        "political", "geopolitical", "economic", "policy", "status quo"
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+slang_to_formal : {
+    # General Slang
+    "putin's puppet": "pro-Russian leader",
+    "zelensky fanboy": "supporter of Volodymyr Zelensky",
+    "nato bots": "pro-NATO supporters",
+    "ukie": "Ukrainian",
+    "ruski": "Russian",
+    "fake news": "misinformation",
+    "keyboard warrior": "online activist",
+    "tankie": "pro-Russian sympathizer",
+    "kremlin troll": "pro-Russian propagandist",
+    "western propaganda": "Western media narrative",
+    "war crime apologist": "defender of alleged war crimes",
+    "russophobia": "fear or hostility toward Russia",
+    "ukronazi": "anti-Ukrainian propagandist term",
+    "putler": "comparison of Putin to Hitler",
+    "zelensky simps": "strong Zelensky supporters",
+    
+    # Russia-Ukraine Conflict Specific
+    "invasion": "military aggression",
+    "ukraine war": "Russia-Ukraine conflict",
+    "annexation of crimea": "illegal occupation of Crimea",
+    "russian conscription": "forced military enlistment in Russia",
+    "nato expansion": "NATO enlargement",
+    "moskva sinking": "loss of Russian warship Moskva",
+    "russian puppet": "pro-Russian politician",
+    "ukrainian defenders": "Ukrainian military forces",
+    "russian aggression": "acts of violence by Russia",
+    "putin's lies": "Kremlin disinformation",
+    "zelensky's bravery": "leadership of Volodymyr Zelensky",
+    "ukraine's victory": "success of Ukrainian forces",
+    "sanction russia": "impose sanctions on Russia",
+    "war crimes": "violations of international law",
+    "nuclear threat": "potential use of nuclear weapons",
+    
+    # Online Slang
+    "russian bot": "pro-Russian online commenter",
+    "ukrainian bot": "pro-Ukrainian online commenter",
+    "fake accounts": "inauthentic social media profiles",
+    "cyber war": "cyberattacks between nations",
+    "disinfo": "disinformation",
+    "info war": "propaganda battle",
+    "spam accounts": "bot accounts spreading propaganda",
+    "troll farm": "organization creating online propaganda",
+    "russian hackers": "cyber operatives aligned with Russia",
+    "ukrainian resistance": "efforts by Ukrainians to defend their land",
+    
+    # Geopolitical Slang
+    "russia-backed separatists": "pro-Russian groups in Ukraine",
+    "donbas conflict": "war in the Donetsk and Luhansk regions",
+    "kyiv regime": "Ukrainian government",
+    "kremlin narrative": "Russian state propaganda",
+    "moscow propaganda": "disinformation spread by Russian state media",
+    "pro-western": "aligned with Western countries",
+    "anti-western": "opposed to Western countries",
+    "nato intervention": "NATO military involvement",
+    "energy war": "conflict over energy resources",
+    "sanctions war": "economic measures against Russia"
+}
+

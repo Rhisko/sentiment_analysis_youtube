@@ -86,13 +86,13 @@ cukup netral tetapi tidak buruk
 cukup cukup standar
 cukup biasa tetapi tidak menonjol
 cukup biasa tetapi tidak istimewa
-cukup cukup tidak berlebihan
-cukup cukup lumayan
-cukup cukup stabil
-cukup cukup sedang
-cukup cukup seimbang
-cukup cukup normal
-cukup cukup rata-rata
-cukup cukup moderat
-cukup cukup wajar
-cukup cukup tidak buruk
+cukup tidak berlebihan
+cukup lumayan
+cukup stabil
+cukup sedang
+cukup seimbang
+cukup normal
+cukup rata-rata
+cukup moderat
+cukup wajar
+cukup tidak buruk

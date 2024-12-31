@@ -17,7 +17,6 @@ def get_youtube_video_id(url):
 def load_config():
     with open("config/config.yaml", "r") as file:
         return yaml.safe_load(file)
-
 def get_video_comments(api_key, video_id, max_results):
     youtube = build("youtube", "v3", developerKey=api_key)
     comments = []
@@ -46,7 +45,6 @@ def get_video_comments(api_key, video_id, max_results):
         # Break if there are no more pages
         if not next_page_token:
             break
-
     return comments
 
 

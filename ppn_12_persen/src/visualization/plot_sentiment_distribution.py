@@ -2,7 +2,9 @@ import json
 import matplotlib.pyplot as plt
 from collections import Counter
 import pandas as pd
-from wordcloud import WordCloud
+from wordcloud import WordCloud, STOPWORDS
+import nltk
+from nltk.corpus import stopwords
 
 # def load_data(file_path):
 #     """
@@ -117,7 +119,14 @@ def create_grafik_sentiment_distribution(file_path):
     text_data = " ".join(comment for comment in df['comment'].astype(str))
 
     # Generate a word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color="white").generate(text_data)
+    nltk.download('stopwords')
+
+# Ambil stop words dari NLTK
+    stop_words = set(stopwords.words('indonesian'))
+    additional_stopwords = {'yang', 'dan', 'di', 'itu', 'untuk', 'saja', 'dari', 'kalau', 'akan','yg'}
+    stop_words = stop_words.union(additional_stopwords)
+    wordcloud = WordCloud(stopwords=stop_words, width=800, height=400,background_color='white').generate(text_data)
+     
 
     # Display the word cloud
     plt.figure(figsize=(10, 5))

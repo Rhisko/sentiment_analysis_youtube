@@ -2,12 +2,6 @@ import re
 import unicodedata
 from nltk.corpus import stopwords
 from utils.helpers import load_yaml
-# # Ensure the stopwords resource is downloaded
-# import nltk
-# nltk.download('stopwords')
-
-# # Define the stopword list for Indonesian
-# stop_words = set(stopwords.words('indonesian'))
 
 def replace_slang(text):
     slang_dict= load_yaml("config/config.yaml")
@@ -34,9 +28,9 @@ def clean_comment(comment):
         if not unicodedata.combining(char)
     )
     comment = replace_slang(comment)
-    # # Remove stopwords
+    # # # Remove stopwords
     # comment_words = comment.split()
-    # comment = ' '.join(word for word in comment_words if word not in stop_words)
+    # comment = ' '.join(word for word in comment_words if word not in stopwords)
     # Strip leading and trailing spaces
     return comment.strip() if comment.strip() else None
 

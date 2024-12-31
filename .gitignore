@@ -1,7 +1,7 @@
 cheatsheet/
 config/config.yaml
 mytoken.rk
-
+*.csv
 .env
 # Byte-compiled / optimized / DLL files
 __pycache__/

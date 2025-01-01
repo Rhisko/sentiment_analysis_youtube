@@ -1,4 +1,4 @@
-# Unpam University Project
+# Unpam University Project for Assignments and Academic Needs
 
 This project is created as a university assignment and uses Python version 3.13. Each folder in this repository represents a separate project.
 

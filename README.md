@@ -1,4 +1,4 @@
-# University Project Repository
+# Pamulang University Project Repository
 
 Welcome to the University Project Repository! This collection of projects has been created as part of a university assignment, utilizing **Python 3.13**. Each folder in this repository represents a distinct project, showcasing various applications of Python.
 

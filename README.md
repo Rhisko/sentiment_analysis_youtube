@@ -34,14 +34,14 @@ To run this project, use the following command:
 ### 3. sentiment_analisis_kenaikan_ppn_12_persen
 
 To run this project, use the following command:
-    make install && sentiment_analysis_vat_increase
+    make install && make sentiment_analysis_vat_increase
 
 Make sure to replace `{Your_youtube_api_token}` with your valid YouTube API token.
 
 ### 4. pilkada_jateng_2024
 
 To run this project, use the following command:
-    make install && pilkada_jateng
+    make install && make pilkada_jateng
 
 
 

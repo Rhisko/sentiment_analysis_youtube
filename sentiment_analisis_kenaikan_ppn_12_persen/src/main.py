@@ -6,6 +6,7 @@ from utils.helpers import load_yaml
 from visualization.plot_sentiment_distribution import create_grafik_sentiment_distribution
 from data_collection.create_report_csv import save_to_csv
 import os
+from evaluasi.evaluasi import evaluasi_model
 
 token = os.getenv("TOKEN")
 
@@ -65,7 +66,9 @@ def main():
         output_file = "data/outputs/dataset_with_sentiments.csv"
         perform_sentiment_analysis(cleaned_file, output_file, logger)
         logger.info(f"Sentiment analysis completed. Output saved to {output_file}")
-    
+        
+        # Evaluasi model
+        evaluasi_model()
     except Exception as e:
         logger.error(f"An error occurred: {e}")
 

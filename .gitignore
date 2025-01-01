@@ -1,3 +1,10 @@
+sentiment_analisis_kenaikan_ppn_12_persen/data/outputs/*
+sentiment_analisis_kenaikan_ppn_12_persen/data/processed/*
+sentiment_analisis_kenaikan_ppn_12_persen/data/raw/*
+topic_modeling_dan_lda_pidato_perdana_prabowo_subianto/data/audios/*
+topic_modeling_dan_lda_pidato_perdana_prabowo_subianto/data/outputs/*
+topic_modeling_dan_lda_pidato_perdana_prabowo_subianto/data/transcripts/*
+topic_modeling_dan_lda_pidato_perdana_prabowo_subianto/data/videos/*
 cheatsheet/
 config/config.yaml
 mytoken.rk

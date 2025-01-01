@@ -26,7 +26,7 @@ class LdaModeling:
         self.dictionary = corpora.Dictionary(self.tokenized_texts) 
         # Mengonversi tokenized texts menjadi format yang sesuai untuk LDA
         self.corpus = [self.dictionary.doc2bow(text) for text in self.tokenized_texts]
-        print("Corpus created:", self.corpus)
+        # print("Corpus created:", self.corpus)
         return self.corpus
 
     def build_model(self):

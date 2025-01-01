@@ -13,18 +13,25 @@ Before running the projects, please install all the required libraries using the
 
 To run this project, use the following command:
 
+   make install && make topic_modeling
+
 
 ### 2. sentiment_analisis_rusia_vs_ukraine
 
 To run this project, use the following command:
+    make install && make sentiment_analysis_russia_ukraine
 
+### 3. sentiment_analisis_kenaikan_ppn_12_persen
+
+To run this project, use the following command:
+    make install && sentiment_analysis_vat_increase
 
 Make sure to replace `{Your_youtube_api_token}` with your valid YouTube API token.
 
 ### 4. pilkada_jateng_2024
 
 To run this project, use the following command:
-
+    make install && pilkada_jateng
 
 ## Notes
 

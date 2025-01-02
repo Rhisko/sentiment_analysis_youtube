@@ -3,8 +3,9 @@ from src.transcribe import transcribe_audio
 from src.data_preprocessing import DataPreprocessor
 from src.lda_modeling import LdaModeling
 from src.visualization import Visualization
+from config.config import youtube_url
 
-def main(youtube_url):
+def main():
     # Step 1: Download video
     print("Downloading audio only from youtube video...")
     video_id=download_video_audio(youtube_url)
@@ -36,5 +37,4 @@ def main(youtube_url):
 
 
 if __name__ == "__main__":
-    url = "https://www.youtube.com/watch?v=56mWVnv0wQk" # please change with your Youtube Video
-    main(url)
+    main()

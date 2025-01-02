@@ -1,4 +1,6 @@
 
+youtube_url = "https://www.youtube.com/watch?v=56mWVnv0wQk"
+
 # append additional stopword
 list_stopwords_additional = [  'yg', 'dg', 'rt', 'dgn', 'ny', 'd', 'klo', 
                     'kalo', 'amp', 'biar', 'bikin', 'bilang', 

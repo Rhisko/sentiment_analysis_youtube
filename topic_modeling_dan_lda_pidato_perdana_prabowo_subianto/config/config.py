@@ -1,3 +1,4 @@
+
 # append additional stopword
 list_stopwords_additional = [  'yg', 'dg', 'rt', 'dgn', 'ny', 'd', 'klo', 
                     'kalo', 'amp', 'biar', 'bikin', 'bilang', 

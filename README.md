@@ -5,9 +5,9 @@ Welcome to the University Project Repository! This collection of projects has be
 ## Table of Contents
 - [Installation](#installation)
 - [Projects](#projects)
-  - [1. Topic Modeling and LDA: Prabowo Subianto's Inaugural Speech](#1-topic-modeling-and-lda-prabowo-subiantos-inaugural-speech)
-  - [2. Sentiment Analysis: Russia vs Ukraine](#2-sentiment-analysis-russia-vs-ukraine)
-  - [3. Sentiment Analysis: VAT Increase](#3-sentiment-analysis-vat-increase)
+  - [1. topic_modeling_dan_lda_pidato_perdana_prabowo_subianto](#1-topic_modeling_dan_lda_pidato_perdana_prabowo_subianto)
+  - [2. sentiment_analisis_rusia_vs_ukraine](#2-sentiment_analisis_rusia_vs_ukraine)
+  - [3. sentiment_analisis_kenaikan_ppn_12_persen](#3-sentiment_analisis_kenaikan_ppn_12_persen)
   - [4. Pilkada Jateng 2024](#4-pilkada-jateng-2024)
 - [Running Projects with Makefile](#running-projects-with-makefile)
 - [Notes](#notes)

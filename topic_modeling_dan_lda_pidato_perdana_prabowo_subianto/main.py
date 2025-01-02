@@ -22,7 +22,7 @@ def main(youtube_url):
     print(f"Dataframe After Cleaned : {df['Transcription_after_preprocess']} \n {df['Transcription_tokens']}")
 
     # # Build LDA model
-    lda_modeling = LdaModeling(df,video_id, total_topics=3, number_words=10)
+    lda_modeling = LdaModeling(df,video_id, total_topics=5, number_words=10)
     lda_modeling.create_corpus()
     lda_modeling.build_model()
     lda_modeling.print_topics()
